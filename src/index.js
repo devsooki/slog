@@ -9,12 +9,16 @@ import Header from 'components/Header';
 
 // style
 import GlobalStyle from './style/GlobalStyle';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <Header />
-    <RoutePages />
+
+    <BrowserRouter>
+      <Header />
+      <RoutePages />
+    </BrowserRouter>
   </React.StrictMode>
 );

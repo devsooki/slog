@@ -10,12 +10,10 @@ import Write from 'pages/Write';
 
 const RoutePages = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path={ROUTE_PATH.home} element={<Home />} />
-        <Route path={ROUTE_PATH.write} element={<Write />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path={ROUTE_PATH.home} element={<Home />} />
+      <Route path={ROUTE_PATH.write} element={<Write />} />
+    </Routes>
   )
 }
 

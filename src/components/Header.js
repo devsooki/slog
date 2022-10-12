@@ -1,14 +1,23 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
+// style
 import styled from 'styled-components'
 
 const Header = () => {
+  const navigate = useNavigate()
+
+  const onClickMene = menu => {
+    navigate(menu);
+  }
+
   return (
     <Container>
-      <Logo>
+      <Logo onClick={() => onClickMene('/')}>
         Slog
       </Logo>
-      <Menu>
-        📝
+      <Menu onClick={() => onClickMene('/write')}>
+        새글작성
       </Menu>
     </Container>
   )
@@ -32,6 +41,14 @@ const Logo = styled.h1`
   cursor: pointer;
 `
 const Menu = styled.button`
-  font-size: 20px;
+  padding: 10px 15px;
+  font-size: 13px;
   background: none;
+  border: 1px solid #000;
+  border-radius: 20px;
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
 `
