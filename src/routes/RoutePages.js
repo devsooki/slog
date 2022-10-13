@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ROUTE_PATH from 'constant/RoutePath';
 
 // component
-import Home from 'pages/Home';
+import Home from 'pages/home/Home';
 import Write from 'pages/Write';
 
 const RoutePages = () => {
