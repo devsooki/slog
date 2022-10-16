@@ -8,6 +8,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
+    height: 100%;
     background-color: #fce4ea;
   }
   ul,li {

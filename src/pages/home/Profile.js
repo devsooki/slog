@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+// tool
+
 const Profile = () => {
   const [attachment, setAttachment] = useState('')
 
@@ -24,6 +26,8 @@ const Profile = () => {
     setAttachment('')
   }
   
+
+
   return (
     <Container>
       <ImageContainer>

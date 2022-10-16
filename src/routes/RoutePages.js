@@ -6,7 +6,7 @@ import ROUTE_PATH from 'constant/RoutePath';
 
 // component
 import Home from 'pages/home/Home';
-import Write from 'pages/Write';
+import Write from 'pages/write/Write';
 
 const RoutePages = () => {
   return (
