@@ -1,15 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Editor = () => {
+  const [title, setTitle] = useState('')
+  const [text, setText] = useState('')
+
+  const onChange = (e, type) => {
+    const {
+      target: { value }
+    } = e
+
+    if (type === 'title') {
+      setTitle(value)
+    } else if (type === 'text') {
+      setText(value)
+    }
+  }
   return (
     <Container>
-      <Input 
-        placeholder='제목을 입력하세요'
-      />
-      <TextArea 
-        placeholder='내용을 입력하세요'
-      />
+      <Content>
+        <Input 
+          value={title}
+          onChange={e => onChange(e, 'title')}
+          placeholder='제목을 입력하세요'
+        />
+        <TextArea 
+          value={text}
+          onChange={e => onChange(e, 'text')}
+          placeholder='내용을 입력하세요'
+        />
+      </Content>
+      <Content>
+        <Title>
+          {title}
+        </Title>
+        <Text>
+          {text}
+        </Text>
+      </Content>
     </Container>
   )
 }
@@ -17,9 +45,13 @@ const Editor = () => {
 export default Editor
 
 const Container = styled.div`
+  display: flex;
   padding: 30px 0;
   margin: 0 auto;
   width: 80%;
+`
+const Content = styled.div`
+  width: 50%;
 `
 const Input = styled.input`
   padding: 7px 0;
@@ -40,4 +72,10 @@ const TextArea = styled.textarea`
   background: none;
   border: none;
   resize: none;
+`
+const Title = styled.div`
+
+`
+const Text = styled.div`
+  word-wrap: break-word;
 `
