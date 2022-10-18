@@ -46,22 +46,25 @@ export default Editor
 
 const Container = styled.div`
   display: flex;
-  padding: 30px 10px;
+  height: calc(100% - 70px);
+  overflow: hidden;
 `
 const Content = styled.div`
+  padding: 20px;
   width: 50%;
+  
+  &:first-child {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 `
 const Input = styled.input`
-  padding: 7px 0;
+  padding: 7px;
   width: 100%;
   color: #666;
   font-size: 20px;
   font-weight: bold;
   background: none;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  border-bottom: 1px solid #666;
+  border: 0;
 `
 const TextArea = styled.textarea`
   padding: 20px 10px;
@@ -73,7 +76,12 @@ const TextArea = styled.textarea`
 `
 const Title = styled.div`
 
+padding: 7px;
+  color: #666;
+  font-size: 20px;
+  font-weight: bold;
 `
 const Text = styled.div`
+padding: 20px 10px;
   word-wrap: break-word;
 `
