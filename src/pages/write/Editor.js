@@ -46,9 +46,7 @@ export default Editor
 
 const Container = styled.div`
   display: flex;
-  padding: 30px 0;
-  margin: 0 auto;
-  width: 80%;
+  padding: 30px 10px;
 `
 const Content = styled.div`
   width: 50%;
