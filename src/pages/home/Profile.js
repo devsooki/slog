@@ -1,8 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const Profile = () => {
   const [attachment, setAttachment] = useState('')
+
+  useEffect(() => {
+    let profile = localStorage.getItem('profile')
+    if (profile !== null) {
+      setAttachment(profile)
+    }
+  }, [localStorage.getItem('profile')])
 
   const onChangeFile = e => {
     const {
@@ -11,11 +18,13 @@ const Profile = () => {
 
     const theFile = files[0]
     const reader = new FileReader()
+
     reader.onloadend = finishedEvent => {
       const {
         currentTarget: { result }
       } = finishedEvent
 
+      localStorage.setItem('profile', result)
       setAttachment(result)
     }
     reader.readAsDataURL(theFile)
