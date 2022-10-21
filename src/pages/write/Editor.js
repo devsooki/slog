@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
+import { saveLocalStorage } from 'utils/localStorage'
 
 const Editor = () => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
 
@@ -16,6 +19,17 @@ const Editor = () => {
       setText(value)
     }
   }
+  
+  const onClickSaveButton = () => {
+    let value = {
+      date: new Date(),
+      title,
+      text
+    }
+    saveLocalStorage('slog', value)
+    navigate('/')
+  }
+
   return (
     <Container>
       <Content>
@@ -30,7 +44,7 @@ const Editor = () => {
           placeholder='내용을 입력하세요'
         />
         <ButtonContainer>
-          <Button>
+          <Button onClick={onClickSaveButton}>
             등록하기
           </Button>
         </ButtonContainer>

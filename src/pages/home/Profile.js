@@ -30,6 +30,7 @@ const Profile = () => {
     reader.readAsDataURL(theFile)
   }
   const onClearAttachment = () => {
+    localStorage.removeItem('profile')
     setAttachment('')
   }
 
@@ -50,7 +51,7 @@ const Profile = () => {
       <UserContainer>
         <b>수키</b>
         <span>
-          주니어 개발자의 기록하는 공간✍🏻
+          일상을 소소하게 기록하는 공간 🥰
         </span>
       </UserContainer>
     </Container>
