@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { saveLocalStorage } from 'utils/localStorage'
 
 const Editor = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
 
@@ -26,7 +26,7 @@ const Editor = () => {
       title,
       text
     }
-    saveLocalStorage('slog', value)
+    saveLocalStorage('slog', [value])
     navigate('/')
   }
 

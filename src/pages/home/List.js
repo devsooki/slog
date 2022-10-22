@@ -1,33 +1,34 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { loadLocalStorage } from 'utils/localStorage'
 
 const List = () => {
-  
-  useEffect(() => {
-    
-  }, [loadLocalStorage('slog')])
+  const navigate = useNavigate()
+  const list = loadLocalStorage('slog')
+
+  const onClickDetail = detail => {
+    navigate('/detail', {
+      state: detail
+    })
+  }
 
   return (
     <Container>
-      <Content>
-        <Title>제목</Title>
-        <Text>
-          내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
-          내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
-          내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
-        </Text>
-        <Date>2022. 10. 21</Date>
-      </Content>
-      <Content>
-        <Title>제목</Title>
-        <Text>
-          내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
-          내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
-          내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
-        </Text>
-        <Date>2022. 10. 21</Date>
-      </Content>
+      {
+        list && list.map((item, index) => (
+          <Content 
+            key={index}
+            onClick={() => onClickDetail(item)}
+          >
+            <Title>{item.title}</Title>
+            <Text>
+              {item.text}
+            </Text>
+            <Date>{item.date}</Date>
+          </Content>
+        ))
+      }
     </Container>
   )
 }
@@ -41,11 +42,15 @@ const Container = styled.div`
   width: 80%;
 `
 const Content = styled.div`
-  padding: 20px 0;
+  padding: 20px 10px;
   border-bottom: 1px solid #ddd;
 
   &:last-child {
     border-bottom: 0;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
   }
 `
 const Title = styled.h1`
@@ -53,7 +58,7 @@ const Title = styled.h1`
 `
 const Text = styled.div`
   margin: 10px 0;
-  height: 30px;
+  max-height: 30px;
   font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
