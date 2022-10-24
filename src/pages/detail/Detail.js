@@ -10,8 +10,6 @@ const Detail = () => {
     date
   } = state
 
-  console.log(state)
-
   return (
     <Container>
       <Title>{title}</Title>
