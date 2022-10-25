@@ -16,18 +16,26 @@ const List = () => {
   return (
     <Container>
       {
-        list && list.map((item, index) => (
-          <Content 
-            key={index}
-            onClick={() => onClickDetail(item)}
-          >
-            <Title>{item.title}</Title>
-            <Text>
-              {item.text}
-            </Text>
-            <Date>{item.date}</Date>
-          </Content>
-        ))
+        list === null ? (
+          <EmptyContainer>
+            작성된 글이 없습니다.
+          </EmptyContainer>
+        ) : (
+          <>
+            {list.map((item, index) => (
+              <Content 
+                key={index}
+                onClick={() => onClickDetail(item)}
+              >
+                <Title>{item.title}</Title>
+                <Text>
+                  {item.text}
+                </Text>
+                <Date>{item.date}</Date>
+              </Content>
+            ))}
+          </>
+        )
       }
     </Container>
   )
@@ -40,6 +48,11 @@ const Container = styled.div`
   flex-direction: column;
   margin: 0 auto;
   width: 80%;
+`
+const EmptyContainer = styled.div`
+  padding: 50px 0;
+  color: #666;
+  text-align: center;
 `
 const Content = styled.div`
   padding: 20px 10px;
