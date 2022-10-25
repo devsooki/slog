@@ -21,8 +21,9 @@ const Editor = () => {
   }
   
   const onClickSaveButton = () => {
+    const date = new Date()
     let value = {
-      date: new Date(),
+      date: `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`,
       title,
       text
     }
