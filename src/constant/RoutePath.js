@@ -1,5 +1,5 @@
 const ROUTE_PATH = {
-  home: '/',
+  home: '/slog',
   write: '/write',
   detail: '/detail'
 };
