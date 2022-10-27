@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components'
+
+// utils
 import { saveLocalStorage } from 'utils/localStorage'
+
+// style
+import styled from 'styled-components'
 
 const Editor = () => {
   const navigate = useNavigate()

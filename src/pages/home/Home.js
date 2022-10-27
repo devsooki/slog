@@ -1,9 +1,8 @@
 import React from 'react';
-import List from './List';
-import Profile from './Profile';
 
 // components
-
+import List from './List';
+import Profile from './Profile';
 
 const Home = () => {
   return (

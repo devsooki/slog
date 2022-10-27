@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import styled from 'styled-components'
+
+// utils
 import { loadLocalStorage } from 'utils/localStorage'
+
+// style
+import styled from 'styled-components'
 
 const List = () => {
   const navigate = useNavigate()

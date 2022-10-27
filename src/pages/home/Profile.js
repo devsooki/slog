@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+
+// style
 import styled from 'styled-components'
 
 const Profile = () => {
