@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <Container>
-      <Logo onClick={() => onClickMene('/')}>
+      <Logo onClick={() => onClickMene('/slog')}>
         Slog
       </Logo>
       <Menu onClick={() => onClickMene('/write')}>
