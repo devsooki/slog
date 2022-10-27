@@ -28,7 +28,7 @@ const Editor = () => {
       text
     }
     saveLocalStorage('slog', value)
-    navigate('/')
+    navigate('/slog')
   }
 
   return (
